@@ -148,3 +148,11 @@ Files opened within a tab (the secondary tabs) are not persisted.
 
 - `Cmd/Ctrl + K` — close active file tab
 - `Cmd/Ctrl + Shift + K` — close all file tabs
+
+## License
+
+MIT — see [LICENSE](./LICENSE).
+
+The code is open for learning and reference. Personal content (bio, name, photos, experience details) belongs to Kostiantyn Kulzhynskyi. If you want to use this layout for your own portfolio, please **substantially personalize** it — don't deploy a copy with my name still in it.
+
+If you fork or build something cool on top of this, I'd love to see it. Drop me a line at cj@jayck.dev.
