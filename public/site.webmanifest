@@ -1,0 +1,10 @@
+{
+  "name": "Kostiantyn Kulzhynskyi — Portfolio",
+  "short_name": "jayck.dev",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" }
+  ],
+  "theme_color": "#010C15",
+  "background_color": "#010C15",
+  "display": "standalone"
+}

@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Globals ───────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #010c15;
+  color: #fff;
+  font-family: 'Fira Code', monospace;
+  overflow: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #010c15;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2d3d;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #607b96;
+}
+
+/* ── View enter animation ─────────────────────────────────────── */
+.view-enter {
+  animation: fadeIn 0.18s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive overrides (ported from prototype) ─────────────── */
+/* These cascades use !important to win over Tailwind utility classes
+   on the same elements. They preserve the prototype's exact behavior
+   at the same breakpoints. */
+
+@media (max-width: 767px) {
+  .desktop-tabs {
+    display: none !important;
+  }
+  .contact-right {
+    display: none !important;
+  }
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+  .sidebar {
+    display: none !important;
+  }
+  .line-numbers {
+    display: none !important;
+  }
+  /* Sidebar rendered inside mobile sheet must stay visible */
+  .sidebar--mobile {
+    display: block !important;
+    width: 100% !important;
+  }
+  .mobile-files-btn {
+    display: flex !important;
+  }
+  /* Hello view: stack vertically on mobile */
+  .hello-view {
+    flex-direction: column !important;
+    overflow-y: auto !important;
+  }
+  .hello-left {
+    flex: none !important;
+    padding: 32px 24px 20px 24px !important;
+  }
+  .hello-right {
+    flex: none !important;
+    padding: 0 16px 24px 16px !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    overflow: visible !important;
+  }
+  .snippet-panel {
+    max-width: 100% !important;
+    font-size: 11px !important;
+  }
+  .snippet-gutter {
+    width: 28px !important;
+    font-size: 11px !important;
+    padding-right: 6px !important;
+  }
+  .snippet-panel .code-body {
+    font-size: 11px !important;
+  }
+  .snippet-link-text {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sidebar {
+    width: 160px !important;
+  }
+  .hello-view {
+    flex-direction: column !important;
+    overflow-y: auto !important;
+  }
+  .hello-left {
+    flex: none !important;
+    padding: 36px 40px 16px 40px !important;
+  }
+  .hello-right {
+    flex: none !important;
+    padding: 0 40px 32px 40px !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    overflow: visible !important;
+  }
+  .snippet-panel {
+    max-width: 100% !important;
+  }
+
+  /* Secondary tab label truncation on tablet */
+  .sec-tab-label {
+    max-width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* Empty file state — responsive arrows */
+.empty-state-mobile {
+  display: none;
+}
+@media (max-width: 767px) {
+  .empty-state-desktop {
+    display: none !important;
+  }
+  .empty-state-mobile {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+/* Mobile: secondary tabs scroll with snap */
+@media (max-width: 767px) {
+  .sec-tabs-bar {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sec-tab-item {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+  /* Reveal button: icon-only on mobile */
+  .reveal-btn span {
+    display: none;
+  }
+  .reveal-btn {
+    padding: 10px 12px !important;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+  }
+  /* Breadcrumb truncates */
+  .breadcrumb-path {
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
