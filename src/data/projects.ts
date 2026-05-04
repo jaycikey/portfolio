@@ -5,61 +5,81 @@ export const projects: Project[] = [
     name: '_jayck-dev',
     filename: 'App.tsx',
     language: 'typescript',
-    githubUrl: 'https://github.com/jaycikey/portfolio',
-    desc: 'This portfolio. VS Code-inspired single-page IDE. React 18 + TypeScript + Vite + Tailwind, deployed on Vercel. Mobile-first with bottom-sheet file explorer, secondary tabs with right-click context menu, per-view file-tab state.',
-    tags: ['React', 'TypeScript', 'Vite', 'Tailwind'],
+    githubUrl: 'https://github.com/jaycikey/portfolio/blob/main/src/App.tsx',
+    desc: 'This portfolio. VS Code-inspired single-page IDE in React 18 + TypeScript + Tailwind + Vite. Per-view file-tab state via custom hook, mobile bottom-sheet with swipe-to-dismiss, right-click tab context menu, Cmd+K keyboard shortcuts, hand-tokenized syntax highlighting. Deploys to Vercel.',
+    tags: ['React', 'TypeScript', 'Vite', 'Tailwind', 'React Router'],
     stars: 1,
     lang: 'TypeScript',
     codePreview: `// App.tsx — root component
-import { useState } from 'react';
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
-import TopTabs from '@/components/layout/TopTabs';
-import Sidebar from '@/components/layout/Sidebar';
-import StatusBar from '@/components/layout/StatusBar';
-import MobileFileSheet from '@/components/layout/MobileFileSheet';
-import HelloView from '@/components/hello/HelloView';
-import AboutMeView from '@/components/about-me/AboutMeView';
-import HomeLabView from '@/components/home-lab/HomeLabView';
-import ProjectsView from '@/components/projects/ProjectsView';
-import ContactView from '@/components/contact/ContactView';
-import { useFileTabs } from '@/hooks/useFileTabs';
+// Per-view file-tab state, localStorage path persistence,
+// and a one-shot redirect on first page load.
+
+const SIDEBAR_PATHS = [
+  '/_about-me', '/_projects', '/_home-lab', '/_contact-me',
+];
+const VALID_PATHS = ['/', ...SIDEBAR_PATHS];
+const STORAGE_KEY = 'pf_path';
+
+// Module-scope flag — lives for the page session, resets
+// on hard refresh / new tab. Used so the localStorage
+// redirect fires only ONCE per page load, not every time
+// the user navigates back to '/' (which would otherwise
+// make the Hello tab unreachable).
+let hasRedirectedOnLoad = false;
+
+function RootRedirect() {
+  if (hasRedirectedOnLoad) {
+    return <HelloView />;
+  }
+  const saved = typeof window !== 'undefined'
+    ? localStorage.getItem(STORAGE_KEY)
+    : null;
+  hasRedirectedOnLoad = true;
+
+  if (saved && saved !== '/' && VALID_PATHS.includes(saved)) {
+    return <Navigate to={saved} replace />;
+  }
+  return <HelloView />;
+}
 
 export default function App() {
-  const navigate = useNavigate();
   const location = useLocation();
-  const activeTab = location.pathname.slice(1) || '_hello';
+  const navigate = useNavigate();
 
-  // Per-view independent tab state
-  const aboutTabs   = useFileTabs();
-  const projTabs    = useFileTabs();
-  const labTabs     = useFileTabs();
-  const contactTabs = useFileTabs();
+  // Persist current path to localStorage
+  useEffect(() => {
+    if (VALID_PATHS.includes(location.pathname)) {
+      localStorage.setItem(STORAGE_KEY, location.pathname);
+    }
+  }, [location.pathname]);
 
-  const [sheetOpen, setSheetOpen] = useState(false);
+  // Each view manages its own tab list independently
+  const aboutFileTabs   = useFileTabs();
+  const projFileTabs    = useFileTabs();
+  const labFileTabs     = useFileTabs();
+  const contactFileTabs = useFileTabs();
 
-  const tabsForView = {
-    '_about-me':   aboutTabs,
-    '_projects':   projTabs,
-    '_home-lab':   labTabs,
-    '_contact-me': contactTabs,
-  }[activeTab];
+  const activeTab = location.pathname;
+
+  const handleSidebarItemClick = (
+    id: string, label: string, filename?: string,
+  ) => {
+    const fname = filename ?? label;
+    if (activeTab === '/_about-me')      aboutFileTabs.openTab(id, label, fname);
+    else if (activeTab === '/_projects') projFileTabs.openTab(id, label, fname);
+    else if (activeTab === '/_home-lab') labFileTabs.openTab(id, label, fname);
+    else if (activeTab === '/_contact-me') contactFileTabs.openTab(id, label, fname);
+  };
 
   return (
-    <div className="ide-shell">
-      <TopTabs active={activeTab} onNavigate={t => navigate(\`/\${t}\`)} />
-      <div className="ide-body">
-        <Sidebar view={activeTab} fileTabs={tabsForView} />
-        <Routes>
-          <Route path="/_hello"      element={<HelloView />} />
-          <Route path="/_about-me"   element={<AboutMeView fileTabs={aboutTabs} />} />
-          <Route path="/_home-lab"   element={<HomeLabView fileTabs={labTabs} />} />
-          <Route path="/_projects"   element={<ProjectsView fileTabs={projTabs} />} />
-          <Route path="/_contact-me" element={<ContactView fileTabs={contactTabs} />} />
-        </Routes>
-      </div>
-      <MobileFileSheet open={sheetOpen} onClose={() => setSheetOpen(false)} />
-      <StatusBar onOpenFiles={() => setSheetOpen(true)} />
-    </div>
+    <Routes>
+      <Route path="/"             element={<RootRedirect />} />
+      <Route path="/_about-me"    element={<AboutMeView fileTabs={aboutFileTabs} />} />
+      <Route path="/_home-lab"    element={<HomeLabView fileTabs={labFileTabs} />} />
+      <Route path="/_projects"    element={<ProjectsView fileTabs={projFileTabs} />} />
+      <Route path="/_contact-me"  element={<ContactView fileTabs={contactFileTabs} />} />
+      <Route path="*"             element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }`,
   },

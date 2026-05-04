@@ -358,4 +358,79 @@ muscle as cloud IAM, just at a different layer.
 
 > **Strictly on owned hardware. No third-party networks. Ever.**`,
   },
+{
+    name: 'Laptop Backup Pipeline',
+    filename: 'backup-onyx.sh',
+    language: 'bash',
+    githubUrl: null,
+    desc: 'Bash automation that mirrors my Omarchy laptop work directory (synced from QNAP) to a portable SSD. Three modes: real backup, dry-run preview, and itemize-changes for diff inspection. Strict mode, mount-check guard, partial-resume on failure, dated logs. Defensive engineering for the dataset I care about most.',
+    tags: ['Bash', 'rsync', 'Automation', 'Backup', 'Linux'],
+    icon: '💾',
+    codePreview: `#!/usr/bin/env bash
+# backup-onyx.sh — laptop → portable SSD mirror
+# Source: ~/Qsync/Onyx (QNAP-synced work directory)
+# Target: portable SSD labeled "Onyx"
+# Modes:
+#   ./backup-onyx.sh              real backup
+#   ./backup-onyx.sh --dry-run    preview, no writes
+#   ./backup-onyx.sh -i           itemized diff preview
+
+set -euo pipefail
+
+SRC="$HOME/Qsync/Onyx"
+DEST="/run/media/<user>/Onyx"
+LOG="$HOME/onyx-backup-$(date +%F).log"
+
+# ── Mode detection ────────────────────────────────
+MODE="run"
+if [[ "\${1-}" == "--dry-run" ]]; then
+  MODE="dry"
+elif [[ "\${1-}" == "-i" || "\${1-}" == "--itemize" ]]; then
+  MODE="itemize"
+fi
+
+# ── Mount-point guard ─────────────────────────────
+# Refuse to run if SSD isn't mounted — prevents
+# rsync from creating files in a phantom directory.
+if [[ ! -d "$DEST" ]]; then
+  echo "Error: Onyx SSD is not mounted at $DEST" >&2
+  exit 1
+fi
+
+# ── Per-mode rsync flags ──────────────────────────
+case "$MODE" in
+  run)
+    echo "Running REAL BACKUP  $SRC/  →  $DEST/"
+    RSYNC_EXTRA=(--info=stats2,progress2)
+    ;;
+  dry)
+    echo "DRY-RUN (no changes)  $SRC/  →  $DEST/"
+    RSYNC_EXTRA=(--dry-run --info=stats2,progress2)
+    ;;
+  itemize)
+    echo "ITEMIZE preview        $SRC/  →  $DEST/"
+    RSYNC_EXTRA=(--dry-run --itemize-changes)
+    ;;
+esac
+
+# ── The actual sync ───────────────────────────────
+# --update     : skip files newer on destination
+# --partial    : resume interrupted transfers
+# --no-perms,  : don't try to mirror Linux perms onto
+#  --no-owner,   external SSD (different filesystem)
+#  --no-group
+RSYNC_BASE=(rsync -avh --update --partial \\
+            --no-perms --no-owner --no-group)
+
+if [[ "$MODE" == "run" ]]; then
+  "\${RSYNC_BASE[@]}" "\${RSYNC_EXTRA[@]}" \\
+    "$SRC/" "$DEST/" | tee "$LOG"
+else
+  "\${RSYNC_BASE[@]}" "\${RSYNC_EXTRA[@]}" \\
+    "$SRC/" "$DEST/"
+fi
+
+echo
+echo "Backup finished (mode: $MODE)"`,
+  },
 ];
