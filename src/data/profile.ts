@@ -9,7 +9,7 @@ const emailAddr = 'cj@jayck.dev';
 export const profile: Profile = {
   name: 'kulzhynskyi-kostiantyn',
   displayName: 'Kulzhynskyi\nKostiantyn',
-  role: '> DevOps / Cloud Engineer',
+  role: '> Platform / Infrastructure Automation Engineer',
   github: `https://github.com/${githubHandle}`,
   githubHandle,
   website: websiteDomain,
@@ -31,7 +31,7 @@ export const profile: Profile = {
  * (gemma4) with Claude API fallback to power
  * my Network+ study workflow in Obsidian.
  *
- * Transitioning into Cloud / DevOps.
+ * Building toward Platform / Infra Automation.
  * Previously led a team of ~30 (7 yrs) as
  * Business Analyst.
  */`,
@@ -63,10 +63,11 @@ export const profile: Profile = {
       'TCP/IP',
       'Networking',
       'Bash',
+      'Python',
       'React',
       'Node.js',
     ],
-    learning: ['AWS', 'Terraform', 'Kubernetes', 'CI/CD', 'Ansible'],
+    learning: ['AWS', 'Terraform', 'Ansible', 'Kubernetes', 'CI/CD'],
   },
 
   contacts: {
@@ -87,12 +88,13 @@ export const profile: Profile = {
   helloBylines: [
     '// daily: linux · mikrotik · docker · ollama',
     '// home lab + comcast field tech + obsidian',
+    '// building toward: terraform · ansible · aws',
   ],
 
   openTo: [
-    'DevOps / Cloud Engineer roles',
-    'Junior SysAdmin / Infrastructure',
-    'NOC / MSP Network Engineer',
+    'Platform / Infrastructure Engineer roles',
+    'Cloud / DevOps Engineer (product company)',
+    'IaC / Automation Engineer',
     'Contract automation / scripting work',
   ],
 };

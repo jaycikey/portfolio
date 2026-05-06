@@ -15,8 +15,9 @@ cj@jayck.dev
 
 ## currently open to
 
-- DevOps / Cloud Engineer roles
-- Junior SysAdmin / Infrastructure
+- Platform / Infrastructure Engineer roles
+- Cloud / DevOps Engineer (product company)
+- IaC / Automation Engineer
 - Contract automation / scripting work
 
 ## response time
@@ -40,7 +41,7 @@ or project so I can respond thoughtfully.`,
     codePreview: `{
   "login": "jaycikey",
   "name": "Kostiantyn Kulzhynskyi",
-  "bio": "Field Tech → Cloud/DevOps. Home lab + AI tooling.",
+  "bio": "Field Tech → Platform Engineer. Home lab + IaC + AI tooling.",
   "location": "Boca Raton, FL",
   "blog": "https://jayck.dev",
   "company": "Comcast",
@@ -57,9 +58,9 @@ or project so I can respond thoughtfully.`,
     }
   ],
   "stats": {
-    "current_focus": "CompTIA Network+ → AWS Cloud Practitioner",
-    "stack": ["Linux", "Docker", "MikroTik", "Bash", "React", "Node.js"],
-    "learning": ["AWS", "Terraform", "Kubernetes", "Ansible"]
+    "current_focus": "CompTIA Network+ → AWS Cloud Practitioner → Terraform",
+    "stack": ["Linux", "Docker", "MikroTik", "Bash", "Python", "Node.js"],
+    "learning": ["AWS", "Terraform", "Ansible", "Kubernetes"]
   },
   "_note": "Live profile data will replace these stats soon (GitHub API integration in progress)."
 }`,
@@ -79,8 +80,9 @@ linkedin.com/in/kostiantyn-kulzhynskyi/
 
 ## headline
 
-Field Technician at Comcast →
-Transitioning into Cloud / DevOps Engineering
+Building toward Platform / Infrastructure Engineer
+| Linux • Docker • Python • AWS • Terraform
+| Home Lab Automation | Network+ in progress
 
 ## summary
 
@@ -89,23 +91,29 @@ Transitioning into Cloud / DevOps Engineering
 infrastructure work.
 
 Currently at Comcast (Oct 2024–present)
-installing and troubleshooting residential
-and commercial network infrastructure daily.
+performing Layer 1–3 network troubleshooting
+in production environments daily.
 
-Studying toward: Network+ → Security+ →
-AWS Cloud Practitioner → DevOps tooling.
+Building toward Platform / Infrastructure
+Automation Engineering — focused on building
+infrastructure with code, not operating it.
+
+Cert path: Network+ → Security+ →
+AWS Cloud Practitioner → AWS SAA →
+Terraform Associate.
 
 ## open to
 
-Remote or hybrid DevOps / Cloud Engineer,
-Junior SysAdmin, or Infrastructure roles.
-Contract automation / scripting work welcome.
+Platform / Infrastructure Engineer,
+Cloud / DevOps Engineer (product company),
+IaC / Automation Engineer roles.
+Remote or hybrid preferred.
 
 ## skills
 
-Linux · Docker · MikroTik · TCP/IP
-React · Node.js · Bash · Ansible (learning)
-AWS · Terraform · Kubernetes (in progress)`,
+Linux · Docker · MikroTik · TCP/IP · Python
+Bash · Git · React · Node.js
+Learning: AWS · Terraform · Ansible · Kubernetes`,
     customContent: null,
   },
   {
