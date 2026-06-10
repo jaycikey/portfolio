@@ -3,27 +3,27 @@ import type { EducationItem } from '@/types/data';
 export const education: EducationItem[] = [
   {
     period: '2024 – present',
-    title: 'Self-directed Platform / Infra Engineering',
+    title: 'Self-directed Network Engineering',
     place: 'Home Lab + Online Courses',
-    desc: 'Linux, Docker, Networking, AWS, Terraform, Ansible. Cert path: Network+ → Security+ → AWS CP → AWS SAA → Terraform Associate.',
+    desc: 'Routing & switching, VLANs, firewalls, IDS/IPS, Linux, Docker. Cert path: Network+ → Security+ → AWS CP → Terraform Associate.',
   },
   {
     period: '2024 – present',
-    title: 'Comcast Field Technician',
-    place: 'On-the-job training',
-    desc: 'Daily hands-on with TCP/IP, coax, fiber, DOCSIS, and Layer 1–3 troubleshooting in production environments at scale.',
+    title: 'Comcast Network Engineer',
+    place: 'On-the-job',
+    desc: 'Daily hands-on with TCP/IP, coax, fiber, DOCSIS, VLANs, and end-to-end L1–L4 troubleshooting in production at scale.',
   },
   {
     period: '2024',
     title: 'Full-Stack Developer Certificate',
     place: 'GoIT',
-    desc: 'JavaScript, React, Node.js, Express, MongoDB. Application-developer perspective informs infrastructure decisions.',
+    desc: 'JavaScript, TypeScript, React, Node.js, MongoDB. Developer perspective informs how I automate and document infrastructure.',
   },
   {
     period: '2016 – 2023',
-    title: 'Business Analyst / Team Lead',
-    place: 'Industry Experience',
-    desc: '~7 years leading teams, automating procurement workflows, building internal tools and documentation standards.',
+    title: 'Business Analyst / Process Automation Lead',
+    place: 'Unique Trade Ko',
+    desc: '~7 years leading a 30-person team — automating workflows across Sales, IT, Security, and Logistics, building internal tools and documentation standards.',
   },
   {
     period: 'Earlier',

@@ -348,13 +348,14 @@ services:
 - Capture handshake: \`airodump-ng wlan1mon\`
 - Convert + crack offline: \`hcxpcapngtool\` → \`hashcat\`
 
-## Why this matters for DevOps / Cloud
+## Why this matters for network engineering
 
-Network security is not "someone else's problem." Knowing
-how a network actually breaks at the radio + protocol level
-makes me a better defender at the cloud layer. WPA2 PSK
-weaknesses, NFC spoofing, IR replay — same threat-modeling
-muscle as cloud IAM, just at a different layer.
+Knowing how a network actually breaks at the radio
+and protocol level makes me a better engineer on the
+wired side. WPA2 PSK weaknesses, NFC spoofing, IR
+replay — the same threat-modeling muscle that informs
+VLAN segmentation, firewall policy, and Zero Trust
+design in my home lab.
 
 > **Strictly on owned hardware. No third-party networks. Ever.**`,
   },

@@ -15,10 +15,10 @@ cj@jayck.dev
 
 ## currently open to
 
-- Platform / Infrastructure Engineer roles
-- Cloud / DevOps Engineer (product company)
-- IaC / Automation Engineer
-- Contract automation / scripting work
+- Network Engineer roles (product company)
+- Network / Systems Administrator
+- Infrastructure Engineer
+- No staffing agencies
 
 ## response time
 
@@ -41,7 +41,7 @@ or project so I can respond thoughtfully.`,
     codePreview: `{
   "login": "jaycikey",
   "name": "Kostiantyn Kulzhynskyi",
-  "bio": "Field Tech → Platform Engineer. Home lab + IaC + AI tooling.",
+  "bio": "Network Engineer @ Comcast. L1–L4 networking + Zero Trust home lab.",
   "location": "Boca Raton, FL",
   "blog": "https://jayck.dev",
   "company": "Comcast",
@@ -58,9 +58,9 @@ or project so I can respond thoughtfully.`,
     }
   ],
   "stats": {
-    "current_focus": "CompTIA Network+ → AWS Cloud Practitioner → Terraform",
-    "stack": ["Linux", "Docker", "MikroTik", "Bash", "Python", "Node.js"],
-    "learning": ["AWS", "Terraform", "Ansible", "Kubernetes"]
+    "current_focus": "CompTIA Network+ → Security+ → AWS Cloud Practitioner",
+    "stack": ["TCP/IP", "VLANs", "MikroTik", "Linux", "Docker", "Bash"],
+    "learning": ["Security+", "AWS", "Terraform", "Ansible"]
   },
   "_note": "Live profile data will replace these stats soon (GitHub API integration in progress)."
 }`,
@@ -80,40 +80,41 @@ linkedin.com/in/kostiantyn-kulzhynskyi/
 
 ## headline
 
-Building toward Platform / Infrastructure Engineer
-| Linux • Docker • Python • AWS • Terraform
-| Home Lab Automation | Network+ in progress
+Network Engineer | Comcast | TCP/IP • VLANs •
+MikroTik • Firewall • IDS/IPS • Linux • Docker
+| CompTIA Network+ in progress
 
 ## summary
 
-7+ years as Business Analyst and Team Lead
-(~30 people) before pivoting to hands-on
-infrastructure work.
+Network Engineer at Comcast (Oct 2024–present)
+— end-to-end L1–L4 troubleshooting across coax,
+fiber, Ethernet, and CPE beyond the demarcation
+point, 5–12 service calls a day.
 
-Currently at Comcast (Oct 2024–present)
-performing Layer 1–3 network troubleshooting
-in production environments daily.
+Previously 7 years as Business Analyst / Process
+Automation Lead, leading a 30-person team across
+Sales, IT, Security, and Logistics.
 
-Building toward Platform / Infrastructure
-Automation Engineering — focused on building
-infrastructure with code, not operating it.
+Off-hours I run a self-hosted home lab built on
+an 8-VLAN Zero Trust design — default-deny
+firewall, IDS/IPS, Twingate ZTNA, Pi-hole.
 
 Cert path: Network+ → Security+ →
-AWS Cloud Practitioner → AWS SAA →
-Terraform Associate.
+AWS Cloud Practitioner → Terraform Associate.
 
 ## open to
 
-Platform / Infrastructure Engineer,
-Cloud / DevOps Engineer (product company),
-IaC / Automation Engineer roles.
-Remote or hybrid preferred.
+Network Engineer (product company),
+Network / Systems Administrator,
+Infrastructure Engineer.
+No staffing agencies.
 
 ## skills
 
-Linux · Docker · MikroTik · TCP/IP · Python
-Bash · Git · React · Node.js
-Learning: AWS · Terraform · Ansible · Kubernetes`,
+TCP/IP · VLANs · Subnetting · Routing & Switching
+MikroTik RouterOS · Firewall · IDS/IPS · Wireshark
+Linux · Docker · Bash · Python · Git
+Learning: Security+ · AWS · Terraform · Ansible`,
     customContent: null,
   },
   {

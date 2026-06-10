@@ -9,7 +9,7 @@ const emailAddr = 'cj@jayck.dev';
 export const profile: Profile = {
   name: 'kulzhynskyi-kostiantyn',
   displayName: 'Kulzhynskyi\nKostiantyn',
-  role: '> Platform / Infrastructure Automation Engineer',
+  role: '> Network Engineer',
   github: `https://github.com/${githubHandle}`,
   githubHandle,
   website: websiteDomain,
@@ -18,56 +18,58 @@ export const profile: Profile = {
 
   bio: `/**
  * About me
- * Field Tech at Comcast (Boca Raton, FL).
- * Daily: TCP/IP, fiber, DOCSIS — layer-1
- * to layer-3 troubleshooting at scale.
+ * Network Engineer at Comcast (Boca Raton, FL).
+ * Daily: end-to-end L1–L4 troubleshooting across
+ * coax, fiber, Ethernet, and CPE beyond the
+ * demarcation point — 5–12 service calls a day.
  *
- * Off-hours: self-hosted infra on QNAP +
- * Pi 5, MikroTik firewall with custom
- * defense-in-depth rules, Twingate ZTNA,
- * Windows-in-Docker on an Omarchy laptop.
+ * Off-hours: self-hosted home lab built around an
+ * 8-VLAN Zero Trust design on MikroTik RouterOS —
+ * default-deny firewall, IDS/IPS, Twingate ZTNA,
+ * Pi-hole DNS filtering, Docker services.
  *
- * Built a JS macro that runs local Ollama
- * (gemma4) with Claude API fallback to power
- * my Network+ study workflow in Obsidian.
+ * Built a JS macro that runs local Ollama (gemma4)
+ * with a Claude API fallback to power my Network+
+ * study workflow in Obsidian.
  *
- * Building toward Platform / Infra Automation.
- * Previously led a team of ~30 (7 yrs) as
- * Business Analyst.
+ * Before tech: 7 yrs as Business Analyst / Process
+ * Automation Lead, leading a team of ~30.
  */`,
 
   experience: [
     {
-      role: 'Field Technician',
+      role: 'Network Engineer',
       company: 'Comcast',
       period: 'Oct 2024 – present',
       location: 'Boca Raton, FL',
-      tags: ['TCP/IP', 'DOCSIS', 'Fiber', 'Troubleshooting'],
-      desc: 'Install and maintain residential & commercial network infrastructure. Diagnose layer-1 to layer-3 issues across coax, fiber, and IP layers. Work directly with customer-facing equipment, headend signal paths, and DOCSIS modems daily.',
+      tags: ['TCP/IP', 'L1–L4', 'Fiber', 'VLANs', 'Troubleshooting'],
+      desc: 'Resolve 5–12 network service calls per day — end-to-end L1–L4 troubleshooting from the physical plant through CPE, beyond the demarcation point. Configure routers, switches, mesh systems, and wireless APs; apply VLAN segmentation on customer premises. RF/DOCSIS signal diagnostics across coax, fiber, Ethernet, and RJ11.',
     },
     {
-      role: 'Business Analyst / Team Lead',
-      company: 'Previous Employer',
+      role: 'Business Analyst / Process Automation Lead',
+      company: 'Unique Trade Ko',
       period: '2016 – 2023',
       location: 'Remote',
-      tags: ['Team Lead', 'Process Automation', 'Stakeholder Mgmt', 'Internal Tooling'],
-      desc: 'Led cross-functional team of ~30. Owned process-automation initiatives, built internal tooling with React & Node, drove measurable reductions in manual operational overhead.',
+      tags: ['Team Lead', 'Process Automation', 'CRM', 'Logistics', 'Internal Tooling'],
+      desc: 'Led cross-functional process-automation initiatives across Sales, IT, Security, and Logistics for a 30-person team. Coordinated a CRM rollout, warehouse pipeline automation, and a logistics route-optimization system; launched a customer support call center from scratch.',
     },
   ],
 
   skills: {
     current: [
+      'TCP/IP',
+      'VLANs',
+      'Subnetting',
+      'Routing & Switching',
+      'MikroTik RouterOS',
+      'Firewall / IDS/IPS',
+      'Wireshark',
       'Linux',
       'Docker',
-      'MikroTik RouterOS',
-      'TCP/IP',
-      'Networking',
       'Bash',
       'Python',
-      'React',
-      'Node.js',
     ],
-    learning: ['AWS', 'Terraform', 'Ansible', 'Kubernetes', 'CI/CD'],
+    learning: ['Security+', 'AWS', 'Terraform', 'Ansible'],
   },
 
   contacts: {
@@ -86,15 +88,15 @@ export const profile: Profile = {
   },
 
   helloBylines: [
-    '// daily: linux · mikrotik · docker · ollama',
-    '// home lab + comcast field tech + obsidian',
-    '// building toward: terraform · ansible · aws',
+    '// daily: tcp/ip · vlans · mikrotik · l1–l4',
+    '// home lab: 8-vlan zero trust + ids/ips + vpn',
+    '// studying for: comptia network+',
   ],
 
   openTo: [
-    'Platform / Infrastructure Engineer roles',
-    'Cloud / DevOps Engineer (product company)',
-    'IaC / Automation Engineer',
-    'Contract automation / scripting work',
+    'Network Engineer roles (product company)',
+    'Network / Systems Administrator',
+    'Infrastructure Engineer',
+    'No staffing agencies',
   ],
 };
