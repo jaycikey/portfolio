@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import LineNumbers from '@/components/layout/LineNumbers';
-import { IconGithub } from '@/components/icons';
+import { IconExternal, IconGithub } from '@/components/icons';
 import Token from './Token';
 import { renderCodeLine } from '@/lib/syntax';
 import { SH } from '@/lib/syntax-tokens';
@@ -51,11 +51,21 @@ export default function FileContent({ item, itemType }: Props) {
           <Token color={C.text}>{item.filename}</Token>
         </span>
 
-        {githubHref && (
-          <a href={githubHref} target="_blank" rel="noopener noreferrer" className="reveal-btn flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded border border-border px-2.5 py-[5px] font-mono text-xs text-muted no-underline transition-colors duration-150 hover:border-muted hover:text-white">
-            <IconGithub size={12} color="currentColor" />
-            <span>reveal-in-github →</span>
-          </a>
+        {(fileItem.liveUrl || githubHref) && (
+          <div className="flex shrink-0 items-center gap-2">
+            {fileItem.liveUrl && (
+              <a href={fileItem.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={fileItem.liveLabel ?? 'open live site'} className="reveal-btn flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded border border-border px-2.5 py-[5px] font-mono text-xs text-muted no-underline transition-colors duration-150 hover:border-muted hover:text-white">
+                <IconExternal size={12} color="currentColor" />
+                <span>{fileItem.liveLabel ?? 'open-live'} →</span>
+              </a>
+            )}
+            {githubHref && (
+              <a href={githubHref} target="_blank" rel="noopener noreferrer" aria-label="reveal in github" className="reveal-btn flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded border border-border px-2.5 py-[5px] font-mono text-xs text-muted no-underline transition-colors duration-150 hover:border-muted hover:text-white">
+                <IconGithub size={12} color="currentColor" />
+                <span>reveal-in-github →</span>
+              </a>
+            )}
+          </div>
         )}
       </div>
 
