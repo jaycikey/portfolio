@@ -5,3 +5,4 @@ export { default as IconClose } from './IconClose';
 export { default as IconGithub } from './IconGithub';
 export { default as IconTwitter } from './IconTwitter';
 export { default as IconLinkedin } from './IconLinkedin';
+export { default as IconExternal } from './IconExternal';
