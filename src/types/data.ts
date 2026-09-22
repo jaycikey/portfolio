@@ -56,6 +56,9 @@ export interface FileItem {
   stars?: number;
   lang?: string;
   icon?: string;
+  /** Optional link to a live product (not source), shown beside the GitHub button. */
+  liveUrl?: string;
+  liveLabel?: string;
   codePreview: string | null;
 }
 
