@@ -7,7 +7,7 @@ export const certs: Cert[] = [
     name: 'CompTIA Network+',
     issuer: 'CompTIA',
     status: 'in-progress',
-    target: 'Aug 2026',
+    target: '2026',
     note: 'N10-009. Studying daily with Obsidian + AI flashcards.',
   },
   {

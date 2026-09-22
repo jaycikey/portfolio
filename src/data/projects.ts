@@ -2,6 +2,78 @@ import type { Project } from '@/types/data';
 
 export const projects: Project[] = [
   {
+    name: '_jayck-flow',
+    filename: 'jayck-flow.md',
+    language: 'markdown',
+    githubUrl: null,
+    liveUrl: 'https://flow.jayck.dev',
+    liveLabel: 'flow.jayck.dev',
+    desc: "Founder and solo engineer. A money calendar for iPhone and iPad, live on the App Store under my LLC with paying subscribers — it carries the running balance forward across a calendar, so the tight day is visible weeks ahead. I built and run all of it: the React + Capacitor app, a Node.js/Express API in Docker on a Hetzner VPS behind Caddy and Cloudflare with the origin locked to Cloudflare's IP ranges, zero-knowledge encrypted sync, StoreKit subscriptions, and the domain's DNS and email authentication.",
+    tags: ['React', 'TypeScript', 'Capacitor', 'Node.js', 'Docker', 'Caddy', 'Cloudflare', 'Hetzner'],
+    lang: 'TypeScript',
+    codePreview: `# JayCK Flow — money calendar
+
+> See tomorrow's balance today.
+
+Live on the App Store
+iPhone and iPad · JAYCIKEY LLC
+Founder and solo engineer
+
+---
+
+## what it does
+
+Income, bills and plans go on the
+day they actually happen. Each day
+carries the running total forward,
+so every square shows that day's
+projected balance.
+
+- green → on track
+- red → balance goes below zero
+- \`What if?\` → test a purchase
+  first; every day after it
+  re-colours
+
+## request path
+
+  iPhone / iPad
+       │  HTTPS
+       ▼
+  Cloudflare ── proxy + DNS
+       │  origin accepts only
+       │  Cloudflare IPv4 / IPv6
+       ▼
+  Caddy ── reverse proxy
+       ▼
+  Node.js / Express ── Docker
+       on a Hetzner VPS
+
+## private by design
+
+- works offline, no account to start
+- no bank connection, no ads,
+  no tracking
+- zero-knowledge sync: encrypted
+  on device (PBKDF2 + AES-256-GCM)
+  before upload; the server stores
+  only ciphertext
+
+## release gate
+
+- \`tsc --noEmit\` clean
+- client + server tests green
+- \`vite build\` succeeds
+- then a real device — gates
+  green is not done
+
+## ops
+
+- SPF · DKIM · DMARC p=quarantine
+- secrets backed up off-box
+- automated server backups`,
+  },
+  {
     name: '_jayck-dev',
     filename: 'App.tsx',
     language: 'typescript',

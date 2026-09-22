@@ -41,7 +41,7 @@ or project so I can respond thoughtfully.`,
     codePreview: `{
   "login": "jaycikey",
   "name": "Kostiantyn Kulzhynskyi",
-  "bio": "Network Engineer @ Comcast. L1–L4 networking + Zero Trust home lab.",
+  "bio": "Network Engineer @ Comcast. Founder of JayCK Flow. Zero Trust home lab.",
   "location": "Boca Raton, FL",
   "blog": "https://jayck.dev",
   "company": "Comcast",
@@ -94,6 +94,10 @@ point, 5–12 service calls a day.
 Previously 7 years as Business Analyst / Process
 Automation Lead, leading a 30-person team across
 Sales, IT, Security, and Logistics.
+
+I founded and build JayCK Flow — a money
+calendar for iPhone and iPad, live on the App
+Store — and run its production stack myself.
 
 Off-hours I run a self-hosted home lab built on
 an 8-VLAN Zero Trust design — default-deny

@@ -23,6 +23,13 @@ export const profile: Profile = {
  * coax, fiber, Ethernet, and CPE beyond the
  * demarcation point — 5–12 service calls a day.
  *
+ * Founder and solo engineer of JayCK Flow — a
+ * money calendar for iPhone and iPad, live on the
+ * App Store. I run its production stack as well:
+ * Hetzner VPS behind Cloudflare and Caddy, origin
+ * locked to Cloudflare's IP ranges, zero-knowledge
+ * encrypted sync, SPF/DKIM/DMARC on the domain.
+ *
  * Off-hours: self-hosted home lab built around an
  * 8-VLAN Zero Trust design on MikroTik RouterOS —
  * default-deny firewall, IDS/IPS, Twingate ZTNA,
@@ -46,6 +53,14 @@ export const profile: Profile = {
       desc: 'Resolve 5–12 network service calls per day — end-to-end L1–L4 troubleshooting from the physical plant through CPE, beyond the demarcation point. Configure routers, switches, mesh systems, and wireless APs; apply VLAN segmentation on customer premises. RF/DOCSIS signal diagnostics across coax, fiber, Ethernet, and RJ11.',
     },
     {
+      role: 'Founder & Solo Engineer',
+      company: 'JAYCIKEY LLC — JayCK Flow',
+      period: '2026 – present',
+      location: 'Boca Raton, FL',
+      tags: ['iOS', 'React', 'Capacitor', 'Node.js', 'Docker', 'Cloudflare'],
+      desc: "Shipped JayCK Flow, a money calendar for iPhone and iPad, live on the App Store with paying subscribers. Run the production API on a Hetzner VPS — Node.js/Express in Docker behind Caddy and Cloudflare, origin locked to Cloudflare's IPv4/IPv6 ranges; SPF, DKIM, and DMARC passing; zero-knowledge encrypted sync.",
+    },
+    {
       role: 'Business Analyst / Process Automation Lead',
       company: 'Unique Trade Ko',
       period: '2016 – 2023',
@@ -66,8 +81,12 @@ export const profile: Profile = {
       'Wireshark',
       'Linux',
       'Docker',
+      'Cloudflare',
+      'Caddy',
+      'SPF / DKIM / DMARC',
       'Bash',
       'Python',
+      'Node.js / TypeScript',
     ],
     learning: ['Security+', 'AWS', 'Terraform', 'Ansible'],
   },
@@ -88,6 +107,7 @@ export const profile: Profile = {
   },
 
   helloBylines: [
+    '// shipped: jayck flow · money calendar · app store',
     '// daily: tcp/ip · vlans · mikrotik · l1–l4',
     '// home lab: 8-vlan zero trust + ids/ips + vpn',
     '// studying for: comptia network+',
