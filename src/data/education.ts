@@ -9,7 +9,7 @@ export const education: EducationItem[] = [
   },
   {
     period: '2024 – present',
-    title: 'Comcast Network Engineer',
+    title: 'Comcast Network Technician',
     place: 'On-the-job',
     desc: 'Daily hands-on with TCP/IP, coax, fiber, DOCSIS, VLANs, and end-to-end L1–L4 troubleshooting in production at scale.',
   },

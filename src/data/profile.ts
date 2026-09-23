@@ -18,7 +18,7 @@ export const profile: Profile = {
 
   bio: `/**
  * About me
- * Network Engineer at Comcast (Boca Raton, FL).
+ * Network Technician at Comcast (Boca Raton, FL).
  * Daily: end-to-end L1–L4 troubleshooting across
  * coax, fiber, Ethernet, and CPE beyond the
  * demarcation point — 5–12 service calls a day.
@@ -45,7 +45,7 @@ export const profile: Profile = {
 
   experience: [
     {
-      role: 'Network Engineer',
+      role: 'Network Technician',
       company: 'Comcast',
       period: 'Oct 2024 – present',
       location: 'Boca Raton, FL',

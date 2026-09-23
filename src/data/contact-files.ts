@@ -41,7 +41,7 @@ or project so I can respond thoughtfully.`,
     codePreview: `{
   "login": "jaycikey",
   "name": "Kostiantyn Kulzhynskyi",
-  "bio": "Network Engineer @ Comcast. Founder of JayCK Flow. Zero Trust home lab.",
+  "bio": "Network Technician @ Comcast. Founder of JayCK Flow. Zero Trust home lab.",
   "location": "Boca Raton, FL",
   "blog": "https://jayck.dev",
   "company": "Comcast",
@@ -80,13 +80,13 @@ linkedin.com/in/kostiantyn-kulzhynskyi/
 
 ## headline
 
-Network Engineer | Comcast | TCP/IP • VLANs •
+Network Technician | Comcast | TCP/IP • VLANs •
 MikroTik • Firewall • IDS/IPS • Linux • Docker
 | CompTIA Network+ in progress
 
 ## summary
 
-Network Engineer at Comcast (Oct 2024–present)
+Network Technician at Comcast (Oct 2024–present)
 — end-to-end L1–L4 troubleshooting across coax,
 fiber, Ethernet, and CPE beyond the demarcation
 point, 5–12 service calls a day.
