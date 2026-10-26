@@ -15,10 +15,10 @@ cj@jayck.dev
 
 ## currently open to
 
-- Network Engineer roles (product company)
-- Network / Systems Administrator
-- Infrastructure Engineer
-- No staffing agencies
+- Network Technician / Network Support
+- Data Center Technician
+- Junior Network / Systems Administrator
+- IT Infrastructure roles
 
 ## response time
 
@@ -41,7 +41,7 @@ or project so I can respond thoughtfully.`,
     codePreview: `{
   "login": "jaycikey",
   "name": "Kostiantyn Kulzhynskyi",
-  "bio": "Network Technician @ Comcast. Founder of JayCK Flow. Zero Trust home lab.",
+  "bio": "Network Technician @ Comcast. Founder of JayCK Flow. Linux, networking & infrastructure.",
   "location": "Boca Raton, FL",
   "blog": "https://jayck.dev",
   "company": "Comcast",
@@ -58,9 +58,9 @@ or project so I can respond thoughtfully.`,
     }
   ],
   "stats": {
-    "current_focus": "CompTIA Network+ → Security+ → AWS Cloud Practitioner",
-    "stack": ["TCP/IP", "VLANs", "MikroTik", "Linux", "Docker", "Bash"],
-    "learning": ["Security+", "AWS", "Terraform", "Ansible"]
+    "current_focus": "CompTIA Network+",
+    "stack": ["TCP/IP", "MikroTik", "Linux", "Docker", "Caddy", "Cloudflare", "Bash"],
+    "learning": ["Network+", "Terraform", "AWS"]
   },
   "_note": "Live profile data will replace these stats soon (GitHub API integration in progress)."
 }`,
@@ -80,45 +80,47 @@ linkedin.com/in/kostiantyn-kulzhynskyi/
 
 ## headline
 
-Network Technician | Comcast | TCP/IP • VLANs •
-MikroTik • Firewall • IDS/IPS • Linux • Docker
+Network Technician | Linux, Networking &
+Infrastructure | Comcast | Founder, JayCK Flow
 | CompTIA Network+ in progress
 
 ## summary
 
 Network Technician at Comcast (Oct 2024–present)
-— end-to-end L1–L4 troubleshooting across coax,
-fiber, Ethernet, and CPE beyond the demarcation
-point, 5–12 service calls a day.
-
-Previously 7 years as Business Analyst / Process
-Automation Lead, leading a 30-person team across
-Sales, IT, Security, and Logistics.
+— troubleshooting residential broadband and home
+networks in the field, from the physical plant
+through gateways, routers, and Wi-Fi.
 
 I founded and build JayCK Flow — a money
 calendar for iPhone and iPad, live on the App
-Store — and run its production stack myself.
+Store — and run its production Linux server:
+Docker, Caddy, Cloudflare, origin firewall,
+SPF / DKIM / DMARC.
 
-Off-hours I run a self-hosted home lab built on
-an 8-VLAN Zero Trust design — default-deny
-firewall, IDS/IPS, Twingate ZTNA, Pi-hole.
+Off-hours I run a personal home lab: MikroTik
+firewalling with automated IP blocklisting,
+Pi-hole, Twingate, Docker services, a QNAP NAS.
 
-Cert path: Network+ → Security+ →
-AWS Cloud Practitioner → Terraform Associate.
+Previously 7 years as Business Analyst / Process
+Automation Lead for a 30-person team across
+Sales, IT, Security, and Logistics.
+
+Studying for CompTIA Network+.
 
 ## open to
 
-Network Engineer (product company),
-Network / Systems Administrator,
-Infrastructure Engineer.
-No staffing agencies.
+Network Technician / Network Support,
+Data Center Technician,
+Junior Network / Systems Administrator,
+IT Infrastructure roles.
 
 ## skills
 
-TCP/IP · VLANs · Subnetting · Routing & Switching
-MikroTik RouterOS · Firewall · IDS/IPS · Wireshark
-Linux · Docker · Bash · Python · Git
-Learning: Security+ · AWS · Terraform · Ansible`,
+TCP/IP · Subnetting · DNS / DHCP · NAT · Wi-Fi
+DOCSIS / RF · MikroTik RouterOS · Firewall rules
+Wireshark · Nmap · Linux · Docker · Caddy
+Cloudflare · SPF / DKIM / DMARC · Bash · Python
+Learning: Network+ · Terraform · AWS`,
     customContent: null,
   },
   {

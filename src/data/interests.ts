@@ -9,17 +9,17 @@ export const interests: Interest[] = [
   {
     icon: '🏗️',
     label: 'Infrastructure as Code',
-    desc: 'Terraform, Ansible — automating infra with version-controlled config.',
+    desc: 'Learning Terraform — infrastructure as version-controlled config.',
   },
   {
     icon: '🐳',
     label: 'Containerisation',
-    desc: 'Docker, Docker Compose, planning to move into Kubernetes.',
+    desc: 'Docker and Docker Compose — in the home lab and in production.',
   },
   {
     icon: '☁️',
     label: 'Cloud',
-    desc: 'AWS — currently studying for Cloud Practitioner and SAA.',
+    desc: 'Learning AWS fundamentals. Running my own production VPS behind Cloudflare today.',
   },
   {
     icon: '🖥️',
@@ -34,6 +34,6 @@ export const interests: Interest[] = [
   {
     icon: '⚡',
     label: 'Home Lab Tinkering',
-    desc: 'Raspberry Pi clusters, QNAP NAS, self-hosted services.',
+    desc: 'Raspberry Pi 5, QNAP NAS, a home rack and patch panel, self-hosted services.',
   },
 ];

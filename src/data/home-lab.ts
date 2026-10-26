@@ -6,8 +6,8 @@ export const homeLab: HomeLabItem[] = [
     filename: 'pi5-services.yml',
     language: 'yaml',
     githubUrl: null,
-    desc: 'Plex Media Server (native, reads from QNAP over LAN), Pi-hole and Twingate connector in Docker. 8GB model. Used for network-level ad blocking, media streaming, and zero-trust remote access into the home network.',
-    tags: ['Linux', 'Docker', 'Plex', 'Pi-hole', 'Twingate'],
+    desc: 'Pi-hole and a Twingate connector in Docker, Plex native (reads from QNAP over LAN). 8GB model. Network-wide DNS filtering — I diagnosed and resolved DNS/DHCP service conflicts before confirming Pi-hole as the lab-wide resolver. Remote access through Twingate with MFA and no open inbound ports. Also runs USB-C Ethernet gadget mode (g_ether) to give an iPad a direct wired link into the lab.',
+    tags: ['Linux', 'Docker', 'Pi-hole', 'Twingate', 'g_ether'],
     icon: '🥧',
     codePreview: `# pi5-services.yml — Docker stack on Raspberry Pi 5
 # Plex runs natively (better hardware-transcode support)
@@ -59,7 +59,7 @@ services:
     filename: 'qnap-stack.yml',
     language: 'yaml',
     githubUrl: null,
-    desc: '4-bay NAS — primary storage and Container Station host. 2× HDD for media/backups, 2× SSD as read/write cache. Hosts QVR Pro for security cameras, QuMagie for photo library (auto-backup from phone via Qfile), and a Container Station stack for remote-access tooling.',
+    desc: '4-bay NAS — primary storage and Container Station host. 2× HDD for media/backups, 2× SSD as read/write cache. I diagnosed and resolved its storage-capacity issues and manage volumes, shared folders, snapshots, and access permissions. Hosts QVR Pro for cameras, QuMagie for photos, and a Container Station stack for remote-access tooling.',
     tags: ['NAS', 'Docker', 'Container Station', 'Storage', 'Cameras'],
     icon: '💾',
     codePreview: `# qnap-stack.yml — Container Station services on QNAP TS-431P
@@ -129,17 +129,17 @@ services:
 #   bay 3 + 4  →  SSD (Container Station volumes + QuMagie cache)`,
   },
 {
-    name: 'MikroTik Chateau LTE12',
+    name: 'MikroTik hAP ac³',
     filename: 'mikrotik-firewall.rsc',
     language: 'routeros',
     githubUrl: null,
-    desc: 'Home gateway between the ISP and the LAN. Dual-WAN setup: ether1 (primary) with LTE failover. Defense-in-depth firewall — auto-blacklist for port scans, SYN/RST/ACK flood detection, ICMP rate-limit, admin access locked to a single trusted host, customer-chain forwarding controls. RouterOS 6.49.19 stable.',
-    tags: ['MikroTik', 'RouterOS', 'Firewall', 'LTE', 'Dual-WAN'],
+    desc: 'Lab gateway. Upgraded from RouterOS 6 to 7 — configuration backups taken first. I maintain its firewall rule set: rules that auto-blocklist suspicious source IPs (port scans, SYN floods, ICMP floods) and send email alerts, admin access locked to a single trusted host, and a default-drop policy on the WAN.',
+    tags: ['MikroTik', 'RouterOS 7', 'Firewall', 'IP blocklisting'],
     icon: '🌐',
     codePreview: `# mikrotik-firewall.rsc — RouterOS export (sanitised)
-# Hardware: Chateau LTE12 · ARMv7 4-core @ 716MHz
-# RouterOS 6.49.19 stable
-# Dual-WAN: ether1 (primary) + lte1 (failover)
+# Hardware: MikroTik hAP ac³
+# RouterOS 7 (upgraded from 6.49.19, backups first)
+# WAN: ether1
 # All sensitive values redacted.
 
 # ── Drop traffic from accumulated blacklist ─────────────────
@@ -147,16 +147,12 @@ services:
 add chain=input action=drop src-address-list=blacklist \\
     log-prefix="BLACKLIST_DROP"
 
-# ── Trusted protocols + state tracking on both WANs ────────
+# ── Trusted protocols + state tracking on the WAN ─────────
 add chain=input action=accept protocol=icmp
 add chain=input action=accept connection-state=established \\
     in-interface=ether1
-add chain=input action=accept connection-state=established \\
-    in-interface=lte1
 add chain=input action=accept connection-state=related \\
     in-interface=ether1
-add chain=input action=accept connection-state=related \\
-    in-interface=lte1
 
 # ── Admin access: allow only from one trusted host ─────────
 add chain=input action=add-src-to-address-list protocol=tcp \\
@@ -195,13 +191,10 @@ add chain=input action=add-src-to-address-list protocol=udp \\
 
 # ── Drop everything else from WAN ──────────────────────────
 add chain=input action=drop in-interface=ether1
-add chain=input action=drop in-interface=lte1
 
-# ── Forward chain: customer policy on both WANs ────────────
+# ── Forward chain: customer policy on the WAN ─────────────
 add chain=forward action=jump jump-target=customer \\
     in-interface=ether1
-add chain=forward action=jump jump-target=customer \\
-    in-interface=lte1
 add chain=customer action=accept connection-state=established
 add chain=customer action=accept connection-state=related
 add chain=customer action=drop`,
@@ -353,9 +346,9 @@ services:
 Knowing how a network actually breaks at the radio
 and protocol level makes me a better engineer on the
 wired side. WPA2 PSK weaknesses, NFC spoofing, IR
-replay — the same threat-modeling muscle that informs
-VLAN segmentation, firewall policy, and Zero Trust
-design in my home lab.
+replay — the same threat-modeling muscle that shapes
+the firewall rules and remote-access setup in my
+home lab.
 
 > **Strictly on owned hardware. No third-party networks. Ever.**`,
   },

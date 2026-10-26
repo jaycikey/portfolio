@@ -9,7 +9,7 @@ const emailAddr = 'cj@jayck.dev';
 export const profile: Profile = {
   name: 'kulzhynskyi-kostiantyn',
   displayName: 'Kulzhynskyi\nKostiantyn',
-  role: '> Network Engineer',
+  role: '> Network Technician | Linux, Networking & Infrastructure',
   github: `https://github.com/${githubHandle}`,
   githubHandle,
   website: websiteDomain,
@@ -19,28 +19,28 @@ export const profile: Profile = {
   bio: `/**
  * About me
  * Network Technician at Comcast (Boca Raton, FL).
- * Daily: end-to-end L1–L4 troubleshooting across
- * coax, fiber, Ethernet, and CPE beyond the
- * demarcation point — 5–12 service calls a day.
+ * In the field daily — troubleshooting residential
+ * broadband and home networks from the physical
+ * plant through gateways, routers, and Wi-Fi.
  *
  * Founder and solo engineer of JayCK Flow — a
  * money calendar for iPhone and iPad, live on the
- * App Store. I run its production stack as well:
- * Hetzner VPS behind Cloudflare and Caddy, origin
- * locked to Cloudflare's IP ranges, zero-knowledge
- * encrypted sync, SPF/DKIM/DMARC on the domain.
+ * App Store. I run its production Linux server too:
+ * Docker behind Caddy and Cloudflare, origin
+ * firewall locked to Cloudflare's IP ranges,
+ * SPF/DKIM/DMARC on the domain.
  *
- * Off-hours: self-hosted home lab built around an
- * 8-VLAN Zero Trust design on MikroTik RouterOS —
- * default-deny firewall, IDS/IPS, Twingate ZTNA,
- * Pi-hole DNS filtering, Docker services.
+ * Off-hours: a personal home lab — MikroTik
+ * firewalling with automated IP blocklisting,
+ * Pi-hole DNS filtering, Twingate remote access,
+ * Docker services, a QNAP NAS, a home rack.
  *
  * Built a JS macro that runs local Ollama (gemma4)
  * with a Claude API fallback to power my Network+
  * study workflow in Obsidian.
  *
  * Before tech: 7 yrs as Business Analyst / Process
- * Automation Lead, leading a team of ~30.
+ * Automation Lead for a 30-person team.
  */`,
 
   experience: [
@@ -49,8 +49,8 @@ export const profile: Profile = {
       company: 'Comcast',
       period: 'Oct 2024 – present',
       location: 'Boca Raton, FL',
-      tags: ['TCP/IP', 'L1–L4', 'Fiber', 'VLANs', 'Troubleshooting'],
-      desc: 'Resolve 5–12 network service calls per day — end-to-end L1–L4 troubleshooting from the physical plant through CPE, beyond the demarcation point. Configure routers, switches, mesh systems, and wireless APs; apply VLAN segmentation on customer premises. RF/DOCSIS signal diagnostics across coax, fiber, Ethernet, and RJ11.',
+      tags: ['TCP/IP', 'DOCSIS / RF', 'Wi-Fi', 'Cabling', 'Troubleshooting'],
+      desc: 'Resolve multiple service calls daily, diagnosing connectivity and equipment issues from the physical plant (coax, fiber, Ethernet, RJ11) through gateways, routers, and Wi-Fi. RF/DOCSIS signal diagnostics; install and configure gateways, routers, switches, mesh Wi-Fi, and access points; terminate and test Ethernet and work with patch panels in multi-dwelling and commercial telecom closets.',
     },
     {
       role: 'Founder & Solo Engineer',
@@ -58,37 +58,39 @@ export const profile: Profile = {
       period: '2026 – present',
       location: 'Boca Raton, FL',
       tags: ['iOS', 'React', 'Capacitor', 'Node.js', 'Docker', 'Cloudflare'],
-      desc: "Shipped JayCK Flow, a money calendar for iPhone and iPad, live on the App Store with paying subscribers. Run the production API on a Hetzner VPS — Node.js/Express in Docker behind Caddy and Cloudflare, origin locked to Cloudflare's IPv4/IPv6 ranges; SPF, DKIM, and DMARC passing; zero-knowledge encrypted sync.",
+      desc: "Shipped JayCK Flow, a money calendar for iPhone and iPad, live on the App Store with paying subscribers. Run the production API on a Hetzner Linux VPS — Node.js/Express in Docker behind Caddy and Cloudflare, origin firewall locked to Cloudflare's IPv4/IPv6 ranges; SPF, DKIM, and DMARC (p=quarantine) passing; end-to-end encrypted sync (PBKDF2 + AES-256-GCM). Every release gated on type checks, 60+ test files, a production build, and real-device testing.",
     },
     {
       role: 'Business Analyst / Process Automation Lead',
       company: 'Unique Trade Ko',
       period: '2016 – 2023',
-      location: 'Remote',
-      tags: ['Team Lead', 'Process Automation', 'CRM', 'Logistics', 'Internal Tooling'],
-      desc: 'Led cross-functional process-automation initiatives across Sales, IT, Security, and Logistics for a 30-person team. Coordinated a CRM rollout, warehouse pipeline automation, and a logistics route-optimization system; launched a customer support call center from scratch.',
+      location: 'Ukraine',
+      tags: ['Team Lead', 'Process Automation', 'CRM', 'Logistics', 'Documentation'],
+      desc: 'Led process-improvement projects across Sales, IT, Security, and Logistics for a 30-person team. Partnered with IT to deploy a CRM, web and mobile apps, and a warehouse receiving-to-packaging pipeline; designed an automated delivery route-planning system; set up a customer support call center and wrote documentation and training for every system rolled out.',
     },
   ],
 
   skills: {
     current: [
       'TCP/IP',
-      'VLANs',
       'Subnetting',
+      'DNS / DHCP / NAT',
       'Routing & Switching',
+      'Wi-Fi',
+      'DOCSIS / RF',
       'MikroTik RouterOS',
-      'Firewall / IDS/IPS',
-      'Wireshark',
+      'Firewall rules',
+      'Wireshark / Nmap',
       'Linux',
       'Docker',
-      'Cloudflare',
       'Caddy',
+      'Cloudflare',
       'SPF / DKIM / DMARC',
       'Bash',
       'Python',
       'Node.js / TypeScript',
     ],
-    learning: ['Security+', 'AWS', 'Terraform', 'Ansible'],
+    learning: ['Network+', 'Terraform', 'AWS'],
   },
 
   contacts: {
@@ -108,15 +110,15 @@ export const profile: Profile = {
 
   helloBylines: [
     '// shipped: jayck flow · money calendar · app store',
-    '// daily: tcp/ip · vlans · mikrotik · l1–l4',
-    '// home lab: 8-vlan zero trust + ids/ips + vpn',
+    '// daily: tcp/ip · docsis · wi-fi · cabling',
+    '// home lab: mikrotik · pi-hole · docker · twingate',
     '// studying for: comptia network+',
   ],
 
   openTo: [
-    'Network Engineer roles (product company)',
-    'Network / Systems Administrator',
-    'Infrastructure Engineer',
-    'No staffing agencies',
+    'Network Technician / Network Support',
+    'Data Center Technician',
+    'Junior Network / Systems Administrator',
+    'IT Infrastructure roles',
   ],
 };

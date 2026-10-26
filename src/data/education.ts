@@ -3,15 +3,15 @@ import type { EducationItem } from '@/types/data';
 export const education: EducationItem[] = [
   {
     period: '2024 – present',
-    title: 'Self-directed Network Engineering',
+    title: 'Self-directed Networking & Infrastructure',
     place: 'Home Lab + Online Courses',
-    desc: 'Routing & switching, VLANs, firewalls, IDS/IPS, Linux, Docker. Cert path: Network+ → Security+ → AWS CP → Terraform Associate.',
+    desc: 'Networking fundamentals, firewall rules, Linux, Docker. Studying for CompTIA Network+; learning Terraform and AWS fundamentals.',
   },
   {
     period: '2024 – present',
     title: 'Comcast Network Technician',
     place: 'On-the-job',
-    desc: 'Daily hands-on with TCP/IP, coax, fiber, DOCSIS, VLANs, and end-to-end L1–L4 troubleshooting in production at scale.',
+    desc: 'Daily hands-on with coax, fiber, Ethernet, DOCSIS/RF diagnostics, Wi-Fi, cabling, and telecom closets — troubleshooting from the physical plant through gateways and routers.',
   },
   {
     period: '2024',
@@ -22,8 +22,8 @@ export const education: EducationItem[] = [
   {
     period: '2016 – 2023',
     title: 'Business Analyst / Process Automation Lead',
-    place: 'Unique Trade Ko',
-    desc: '~7 years leading a 30-person team — automating workflows across Sales, IT, Security, and Logistics, building internal tools and documentation standards.',
+    place: 'Unique Trade Ko, Ukraine',
+    desc: '~7 years leading process-automation projects for a 30-person team across Sales, IT, Security, and Logistics, with documentation and training for every system rolled out.',
   },
   {
     period: 'Earlier',
